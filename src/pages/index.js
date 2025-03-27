@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { CartItem, CartSummary } from "./components/Cart";
-import { ProductCard } from "./components/product";
-import { PRODUCTS, THRESHOLD, FREE_GIFT } from "./constants/product";
+import { CartItem, CartSummary } from "../components/Cart";
+import { ProductCard } from "../components/product";
+import { PRODUCTS, THRESHOLD, FREE_GIFT } from "../constants/product";
 
 export default function Home() {
   const [cartItems, setCartItems] = useState([]);

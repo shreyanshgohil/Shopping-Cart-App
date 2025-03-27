@@ -1,5 +1,5 @@
 import React from "react";
-import { THRESHOLD } from "@/pages/constants/product";
+import { THRESHOLD } from "@/constants/product";
 const CartSummary = (props) => {
   const { progressPercentage, subtotal } = props;
   return (
