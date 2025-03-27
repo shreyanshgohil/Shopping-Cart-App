@@ -67,7 +67,7 @@ export default function Home() {
   };
 
   return (
-    <div className="px-10 md:px-16 lg:px-20 relative">
+    <div className="px-10 lg:px-20 relative">
       {showToast && (
         <div className="fixed z-20 right-10 top-10 py-2 px-6 rounded-3xl font-medium bg-green-300">
           Free product has added
@@ -79,7 +79,7 @@ export default function Home() {
         </h1>
         <div>
           <h2 className="text-2xl font-semibold mb-3">Products</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 lg:gap-10">
             {PRODUCTS.map((product, index) => {
               return (
                 <ProductCard
