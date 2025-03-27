@@ -29,7 +29,7 @@ export default function Home() {
     setProgressPercentage((total * 100) / THRESHOLD);
     setTimeout(() => {
       setShowToast(false);
-    }, 1000);
+    }, 2000);
   };
 
   // Too add the product to cart
@@ -67,19 +67,19 @@ export default function Home() {
   };
 
   return (
-    <div className="px-20 relative">
+    <div className="px-10 md:px-16 lg:px-20 relative">
       {showToast && (
-        <div className="absolute right-10 top-10 py-2 px-6 rounded-3xl font-medium bg-green-300">
+        <div className="fixed z-20 right-10 top-10 py-2 px-6 rounded-3xl font-medium bg-green-300">
           Free product has added
         </div>
       )}
       <section className="pb-16">
-        <h1 className="text-3xl text-center font-bold my-6">
+        <h1 className="text-3xl text-center font-bold mt-6 mb-10 md:my-6">
           Shopping Cart App
         </h1>
         <div>
           <h2 className="text-2xl font-semibold mb-3">Products</h2>
-          <div className="grid grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-10">
             {PRODUCTS.map((product, index) => {
               return (
                 <ProductCard
@@ -101,18 +101,22 @@ export default function Home() {
               subtotal={subtotal}
             />
           </div>
-          <div className="flex flex-col gap-4">
-            <h2 className="text-2xl font-semibold mb-3">Cart Items</h2>
-            {cartItems.map((cartItem, index) => {
-              return (
-                <CartItem
-                  cartProduct={cartItem}
-                  key={index}
-                  updateQuantityHandler={updateQuantityHandler}
-                />
-              );
-            })}
-          </div>
+          {cartItems.length > 0 && (
+            <div className="mb-6">
+              <h2 className="text-2xl font-semibold mb-3">Cart Items</h2>
+              <div className="flex flex-col gap-4">
+                {cartItems.map((cartItem, index) => {
+                  return (
+                    <CartItem
+                      cartProduct={cartItem}
+                      key={index}
+                      updateQuantityHandler={updateQuantityHandler}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </div>
