@@ -1,4 +1,4 @@
-import { FREE_GIFT } from "@/constants/product";
+import { FREE_GIFT } from "../../constants/product";
 import React from "react";
 
 const CartItem = (props) => {
